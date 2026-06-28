@@ -14,6 +14,9 @@ public class Review {
     @Column(name = "user_id", nullable = false)
     private int userId;
 
+    @Transient
+    private String userName;
+
     @Column(name = "product_id", nullable = false)
     private int productId;
 
@@ -131,4 +134,7 @@ public class Review {
     public void setCreatedAt(LocalDateTime createdAt) {
         this.createdAt = createdAt;
     }
+
+    public String getUserName() { return userName; }
+    public void setUserName(String userName) { this.userName = userName; }
 }

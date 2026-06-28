@@ -20,6 +20,12 @@ public class Product {
     @Column(name = "base_price", nullable = false)
     private double basePrice;
 
+    @Transient
+    private double finalPrice;
+
+    @Transient
+    private double ratingStars = 5.0;
+
     @Column(name = "image_url")
     private String imageUrl;
 
@@ -131,4 +137,9 @@ public class Product {
     public void setUpdatedAt(LocalDateTime updatedAt) {
         this.updatedAt = updatedAt;
     }
+
+    public double getFinalPrice() { return finalPrice; }
+    public void setFinalPrice(double finalPrice) { this.finalPrice = finalPrice; }
+    public double getRatingStars() { return ratingStars; }
+    public void setRatingStars(double ratingStars) { this.ratingStars = ratingStars; }
 }
